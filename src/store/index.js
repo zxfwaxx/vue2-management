@@ -1,6 +1,8 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 
+import menu from "./module/menu"
+import getters from "./getter"
 Vue.use(Vuex)
 
 export default new Vuex.Store({
@@ -9,18 +11,9 @@ export default new Vuex.Store({
   mutations: {
   },
   actions: {
-    // GenerateRoutes ({ commit }, data) {
-    //   return new Promise(resolve => {
-    //     generatorDynamicRouter(data).then(routers => {
-    //       commit('SET_ROUTERS', routers)
-    //       resolve()
-    //     }).catch(() => {
-    //       commit('SET_ROUTERS', [])
-    //       resolve()
-    //     })
-    //   })
-    // }
   },
   modules: {
-  }
+    menu
+  },
+  getters
 })

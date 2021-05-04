@@ -9,6 +9,7 @@ import 'element-ui/lib/theme-chalk/index.css';
 Vue.use(ElementUI);
 
 import './permission'
+// import './Utils/glob'
 
 Vue.config.productionTip = false
 

@@ -8,8 +8,9 @@
       <i class="el-icon-menu"></i>
     </div>
     <div class="logo">后台管理系统</div>
-    <div class="head-right">
-        退出登陆
+    <bread-crumb class="berads" />
+    <div class="head-right" @click="logout">
+      退出登陆
     </div>
   </div>
 </template>
@@ -17,14 +18,15 @@
 <script>
 //这里可以导入其他文件（比如：组件，工具js，第三方插件js，json文件，图片文件等等）
 //例如：import 《组件名称》 from '《组件路径》';
-
+import bus from '@/utils/bus.js'
+import breadCrumb from './breadcrumb';
 export default {
   //import引入的组件需要注入到对象中才能使用
-  components: {},
+  components: {breadCrumb},
   data () {
     //这里存放数据
     return {
-
+      collapse: false
     };
   },
   //监听属性 类似于data概念
@@ -33,8 +35,13 @@ export default {
   watch: {},
   //方法集合
   methods: {
+    // 侧边栏折叠
     collapseChage () {
-
+      this.collapse = !this.collapse;
+      bus.$emit('collapse', this.collapse);
+    },
+    logout(){
+      this.$router.push('/login')
     }
   },
   //生命周期 - 创建完成（可以访问当前this实例）
@@ -60,8 +67,8 @@ export default {
   box-sizing: border-box;
   width: 100%;
   height: 70px;
-  font-size: 22px;
   color: #fff;
+  font-size: 20px;
   background-color: #242f42;
   clear: both;
   .collapse-btn {
@@ -72,14 +79,17 @@ export default {
   }
   .logo {
     float: left;
-    width: 250px;
     line-height: 70px;
   }
   .head-right {
     float: right;
+    font-size: 18px;
     line-height: 70px;
     padding-right: 50px;
     cursor: pointer;
+  }
+  .berads{
+    float: left;
   }
 }
 </style>

@@ -3,7 +3,8 @@
   <div class='wrapper'>
     <Head />
     <Aside />
-    <div class="content-box">
+    <div class="content-box"  :class="{'content-collapse':collapse}">
+      <Tage />
       <div class="content">
         <transition
           name="move"
@@ -23,13 +24,16 @@
 //例如：import 《组件名称》 from '《组件路径》';
 import Head from "./Head"
 import Aside from "./Aside"
+import Tage from './Tag'
+import bus from '@/utils/bus.js'
 export default {
   //import引入的组件需要注入到对象中才能使用
-  components: { Head, Aside },
+  components: { Head, Aside, Tage },
   data () {
     //这里存放数据
     return {
-      tagsList: []
+      tagsList: [],
+      collapse:false
     };
   },
   //监听属性 类似于data概念
@@ -42,7 +46,17 @@ export default {
   },
   //生命周期 - 创建完成（可以访问当前this实例）
   created () {
-
+    //设置 菜单的展开或关闭
+    bus.$on('collapse', msg => {
+      this.collapse = msg
+    })
+    // 设置tags
+    bus.$on('seTags', (list) => {
+      let includeArr = list.map(item => {
+        return item.name
+      })
+      this.tagsList = includeArr
+    })
   },
   //生命周期 - 挂载完成（可以访问DOM元素）
   mounted () {
