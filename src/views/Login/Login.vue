@@ -16,7 +16,7 @@
                 <div class="login-btn">
                     <el-button type="primary" @click="submitForm('ruleForm')">登录</el-button>
                 </div>
-                <p class="login-tips">Tips : 用户名和密码随便填。</p>
+                <!-- <p class="login-tips">Tips : 用户名和密码随便填。</p> -->
             </el-form>
         </div>
     </div>
@@ -60,7 +60,8 @@
         position: relative;
         width:100%;
         height:100%;
-        background-image: url(../../assets/img/login-bg.jpg);
+        /* background-image: url(../../assets/img/login-bg.jpg); */
+        background-color: #2d3a4b;
         background-size: 100%;
     }
     .ms-title{
@@ -75,8 +76,8 @@
         position: absolute;
         left:50%;
         top:50%;
-        width:350px;
-        margin:-190px 0 0 -175px;
+        width:400px;
+        margin:-190px 0 0 -200px;
         border-radius: 5px;
         background: rgba(255,255,255, 0.3);
         overflow: hidden;

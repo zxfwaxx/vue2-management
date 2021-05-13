@@ -1,13 +1,17 @@
 <!--  -->
 <template>
   <div class='wrapper'>
+
     <Head />
     <Aside />
-    <div class="content-box"  :class="{'content-collapse':collapse}">
+    <div
+      class="content-box"
+      :class="{'content-collapse':collapse}"
+    >
       <Tage />
       <div class="content">
         <transition
-          name="move"
+          name="fade-transform"
           mode="out-in"
         >
           <keep-alive :include="tagsList">
@@ -33,7 +37,7 @@ export default {
     //这里存放数据
     return {
       tagsList: [],
-      collapse:false
+      collapse: false
     };
   },
   //监听属性 类似于data概念
@@ -73,6 +77,19 @@ export default {
 </script>
 <style lang='less' scoped>
 //@import url(); 引入公共css类
-.basic-layout {
+/* fade-transform */
+.fade-transform-leave-active,
+.fade-transform-enter-active {
+  transition: all 0.5s;
+}
+
+.fade-transform-enter {
+  opacity: 0;
+  transform: translateX(-30px);
+}
+
+.fade-transform-leave-to {
+  opacity: 0;
+  transform: translateX(30px);
 }
 </style>

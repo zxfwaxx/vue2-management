@@ -9,7 +9,7 @@
       <el-breadcrumb-item><a href="/">活动管理</a></el-breadcrumb-item>
       <el-breadcrumb-item>活动列表</el-breadcrumb-item>
       <el-breadcrumb-item>活动详情</el-breadcrumb-item> -->
-      <transition-group name="flip-list">
+      <transition-group name="breadcrumb">
         <el-breadcrumb-item
           v-for="(item,index) in breadsArr"
           :key="index+'breads'"
@@ -18,11 +18,11 @@
             v-if='item.isTit'
             style="color:#fff"
           >{{item.title}}</span>
-          <span
+          <a
             style="color:#0BF0CA"
             v-else
             @click.prevent="handleLink(item)"
-          >{{item.title}}</span>
+          >{{item.title}}</a>
         </el-breadcrumb-item>
       </transition-group>
     </el-breadcrumb>
@@ -48,13 +48,21 @@ export default {
   watch: {
     $route: {
       handler: function (route) {
-        this.breadsArr = []
+        let ars
+        console.log(route.matched)
+        console.log(this.$route)
         console.log(route.matched[0].meta.title, route.matched[1].meta.title)
         if (route.matched[0].meta.title === '系统首页') {
-          this.breadsArr = [{ title: route.matched[0].meta.title, isTit: true }]
-          return
+          // this.breadsArr = [{ title: route.matched[0].meta.title, isTit: true }]
+          // console.log('llll')
+          ars = [{ title: '首页', isTit: true }, { title: route.matched[0].meta.title, isTit: true }]
+        } else {
+          ars = [{ title: '首页', isTit: true }, { title: route.matched[0].meta.title, isTit: true }, { title: route.matched[1].meta.title, isTit: false }]
+
         }
-        this.breadsArr = [{ title: route.matched[0].meta.title, isTit: true }, { title: route.matched[1].meta.title, isTit: false }]
+        // console.log(ars)
+        this.breadsArr = ars
+        // this.breadsArr = [{ title: route.matched[0].meta.title, isTit: true }, { title: route.matched[1].meta.title, isTit: false }]
       },
       immediate: true
     }
@@ -98,6 +106,25 @@ export default {
   }
   .flip-list-move {
     transition: transform 1s;
+  }
+
+  .breadcrumb-enter-active,
+  .breadcrumb-leave-active {
+    transition: all 0.5s;
+  }
+
+  .breadcrumb-enter,
+  .breadcrumb-leave-active {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+
+  .breadcrumb-move {
+    transition: all 0.5s;
+  }
+
+  .breadcrumb-leave-active {
+    // position: absolute;
   }
 }
 </style>
