@@ -1,7 +1,6 @@
 <!--  -->
 <template>
   <div class='wrapper'>
-
     <Head />
     <Aside />
     <div

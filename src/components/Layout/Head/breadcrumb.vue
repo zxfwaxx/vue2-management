@@ -5,14 +5,10 @@
       separator="/"
       class="brands-zdi"
     >
-      <!-- <el-breadcrumb-item :to="{ path: '/' }">首页</el-breadcrumb-item>
-      <el-breadcrumb-item><a href="/">活动管理</a></el-breadcrumb-item>
-      <el-breadcrumb-item>活动列表</el-breadcrumb-item>
-      <el-breadcrumb-item>活动详情</el-breadcrumb-item> -->
       <transition-group name="breadcrumb">
         <el-breadcrumb-item
-          v-for="(item,index) in breadsArr"
-          :key="index+'breads'"
+          v-for="item in breadsArr"
+          :key="item.path"
         >
           <span
             v-if='item.isTit'
@@ -43,26 +39,20 @@ export default {
     };
   },
   //监听属性 类似于data概念
-  computed: {},
+  computed: {
+  },
   //监控data中的数据变化
   watch: {
     $route: {
       handler: function (route) {
+        console.log(route, '(route')
         let ars
-        console.log(route.matched)
-        console.log(this.$route)
-        console.log(route.matched[0].meta.title, route.matched[1].meta.title)
         if (route.matched[0].meta.title === '系统首页') {
-          // this.breadsArr = [{ title: route.matched[0].meta.title, isTit: true }]
-          // console.log('llll')
-          ars = [{ title: '首页', isTit: true }, { title: route.matched[0].meta.title, isTit: true }]
+          ars = [{ title: '首页', isTit: true, path: '/' }, { title: route.matched[0].meta.title, isTit: true, path: route.matched[0].path }]
         } else {
-          ars = [{ title: '首页', isTit: true }, { title: route.matched[0].meta.title, isTit: true }, { title: route.matched[1].meta.title, isTit: false }]
-
+          ars = [{ title: '首页', isTit: true, path: '/' }, { title: route.matched[0].meta.title, isTit: true, path: route.matched[0].path }, { title: route.matched[1].meta.title, isTit: false, path: route.matched[1].path }]
         }
-        // console.log(ars)
         this.breadsArr = ars
-        // this.breadsArr = [{ title: route.matched[0].meta.title, isTit: true }, { title: route.matched[1].meta.title, isTit: false }]
       },
       immediate: true
     }
@@ -124,7 +114,7 @@ export default {
   }
 
   .breadcrumb-leave-active {
-    // position: absolute;
+    position: absolute;
   }
 }
 </style>

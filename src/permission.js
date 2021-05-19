@@ -14,7 +14,6 @@ router.beforeEach((to, from, next) => {
           router.addRoute(item)
         })
       }
-      // router.addRoute(...store.getters.asyncRouter)
       // vue2 是这样动态添加路由的
       // router.addRoutes(store.getters.asyncRouter)
       flag = true
