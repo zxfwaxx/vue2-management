@@ -50,10 +50,11 @@ export default {
         if (route.matched[0].meta.title === '系统首页') {
           ars = [{ title: '首页', isTit: true, path: '/' }, { title: route.matched[0].meta.title, isTit: true, path: route.matched[0].path }]
         } else {
-          ars = [{ title: '首页', isTit: true, path: '/' }, { title: route.matched[0].meta.title, isTit: true, path: route.matched[0].path }, { title: route.matched[1].meta.title, isTit: false, path: route.matched[1].path }]
+          ars = [{ title: '首页', isTit: true, path: '/' }, { title: route.matched[0].meta.title, isTit: true, path: route.matched[0].path }]
         }
         this.breadsArr = ars
       },
+      //, { title: route.matched[1].meta.title, isTit: false, path: route.matched[1].path }
       immediate: true
     }
   },

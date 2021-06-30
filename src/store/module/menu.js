@@ -2,7 +2,7 @@ import { Menu } from '../mutation-type'
 
 //引入基本路由
 import basicRouter from "@/router/basicRouter"
-import asyncRouter from "@/router/asyncRouter"
+import asyncRouter from "@/router/asyncIndex"
 
 // eslint-disable-next-line no-unused-vars
 function hasPermission (route, roles) {
@@ -45,8 +45,6 @@ export default {
         commit(Menu, addRouter)
         resolve()
       })
-
     }
   }
-
 }

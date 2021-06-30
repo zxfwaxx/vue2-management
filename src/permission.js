@@ -6,7 +6,6 @@ router.beforeEach((to, from, next) => {
   console.log(flag, ' flag')
   if (!flag) {
     store.dispatch('addMenu', ['admin']).then(() => {
-      console.log(...store.getters.asyncRouter, 'store.getters.asyncRouter')
       // vue3 是这样的
       const routes = store.getters.asyncRouter
       if (routes.length) {

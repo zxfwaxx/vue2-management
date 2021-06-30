@@ -25,4 +25,9 @@ export default [
     name:'logn',
     component: () => import('@/views/Login/Login.vue')
   },
+  {
+    path: '/404',
+    name: 404,
+    component: () => import('@/views/404.vue')
+  }
 ]
