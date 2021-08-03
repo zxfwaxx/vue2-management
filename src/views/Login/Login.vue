@@ -27,7 +27,7 @@
         data: function(){
             return {
                 ruleForm: {
-                    username: 'admin',
+                    username: 'admin是',
                     password: '123123'
                 },
                 rules: {
