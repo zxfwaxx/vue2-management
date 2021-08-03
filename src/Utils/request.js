@@ -3,7 +3,7 @@ import { Loading } from 'element-ui';
 // 创建 axios 实例
 const service = axios.create({
   // baseURL: baseURL, // api base_url
-  timeout: 90000 // 请求超时时间
+  timeout: 91000 // 请求超时时间
 })
 
 service.all = axios.all
