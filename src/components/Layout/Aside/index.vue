@@ -11,7 +11,8 @@
       unique-opened
       router
     >
-      <template v-for="(item,index) in selectRouter">
+      <sideItem :selectRouter='selectRouter' />
+      <!-- <template v-for="(item,index) in selectRouter">
         <template v-if="item.children && item.alwaysRoot">
           <el-submenu
             :index="item.path"
@@ -54,19 +55,20 @@
             <i :class="item.meta.icon"></i><span slot="title">{{ item.meta.title }}</span>
           </el-menu-item>
         </template>
-      </template>
+      </template> -->
     </el-menu>
   </div>
 </template>
 
 <script>
 import { mapGetters } from 'vuex'
+import sideItem from './sideIem.vue'
 //这里可以导入其他文件（比如：组件，工具js，第三方插件js，json文件，图片文件等等）
 //例如：import 《组件名称》 from '《组件路径》';
 import bus from '@/utils/bus'
 export default {
   //import引入的组件需要注入到对象中才能使用
-  components: {},
+  components: { sideItem },
   data () {
     //这里存放数据
     return {
