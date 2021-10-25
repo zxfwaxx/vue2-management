@@ -3,6 +3,7 @@
   <div class=''>
     我是b
     $attrs :{{$attrs}}
+    {{$listeners}}
     <!-- $prop :{{}} -->
   </div>
 </template>

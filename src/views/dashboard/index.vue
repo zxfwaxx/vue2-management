@@ -53,11 +53,11 @@ export default {
     chss () {
       console.log(this.con)
     },
-    coma () {
-      // console.log(val, '1111')
+    coma (val) {
+      console.log(val, '1111')
     },
-    comb () {
-      // console.log(val, '222')
+    comb (val) {
+      console.log(val, '222')
     }
 
   },
