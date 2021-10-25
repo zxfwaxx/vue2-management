@@ -28,7 +28,7 @@
 import Head from "./Head"
 import Aside from "./Aside"
 import Tage from './tag-blg'
-import bus from '@/Utils/bus.js'
+import bus from '@/utils/bus.js'
 export default {
   //import引入的组件需要注入到对象中才能使用
   components: { Head, Aside, Tage },
