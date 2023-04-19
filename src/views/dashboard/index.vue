@@ -2,47 +2,10 @@
 <template>
   <div class='dashed'>
     我是首页
-<<<<<<< HEAD
-    <el-input
-      v-model.number="con"
-      placeholder="请输入内容"
-    ></el-input>
-    {{ typeof con}}
-    {{con}}
-    <comA
-      a='123'
-      b='456'
-      @coma="coma"
-      @comb="comb"
-    />
-    <div class="record">
-      <h1>{{tipMsg}}</h1>
-      <button @click="onStartVoice">开始</button>
-      <button @click="onEndVoice">结束</button>
-      <button @click="onPlayAudio">播放</button>
-      <div
-        class="record-play"
-        v-show="isFinished"
-      >
-        <h2>Current voice player is:</h2>
-        <audio
-          id="audioVoice"
-          controls
-          autoplay
-        ></audio>
-      </div>
-    </div>
-=======
->>>>>>> master
   </div>
 </template>
 
 <script>
-<<<<<<< HEAD
-import comA from './comA.vue'
-import Record from './js/b';
-=======
->>>>>>> master
 export default {
   //import引入的组件需要注入到对象中才能使用
   components: {  },
@@ -54,7 +17,6 @@ export default {
       isFinished: false,
       tipMsg: '录音',
       audio: "",
-      recorder: new Record()
     };
   },
   //监听属性 类似于data概念
