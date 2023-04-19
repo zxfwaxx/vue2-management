@@ -2,6 +2,7 @@
 <template>
   <div class='dashed'>
     我是首页
+<<<<<<< HEAD
     <el-input
       v-model.number="con"
       placeholder="请输入内容"
@@ -31,15 +32,20 @@
         ></audio>
       </div>
     </div>
+=======
+>>>>>>> master
   </div>
 </template>
 
 <script>
+<<<<<<< HEAD
 import comA from './comA.vue'
 import Record from './js/b';
+=======
+>>>>>>> master
 export default {
   //import引入的组件需要注入到对象中才能使用
-  components: { comA },
+  components: {  },
   data () {
     //这里存放数据
     return {

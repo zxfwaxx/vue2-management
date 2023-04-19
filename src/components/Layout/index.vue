@@ -27,7 +27,7 @@
 //例如：import 《组件名称》 from '《组件路径》';
 import Head from "./Head"
 import Aside from "./Aside"
-import Tage from './tag-blg'
+import Tage from './TagBlg'
 import bus from '@/utils/bus.js'
 export default {
   //import引入的组件需要注入到对象中才能使用
