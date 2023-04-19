@@ -2,27 +2,13 @@
 <template>
   <div class='dashed'>
     我是首页
-    <el-input
-      v-model.number="con"
-      placeholder="请输入内容"
-    ></el-input>
-    {{ typeof con}}
-    {{con}}
-    <comA
-      a='123'
-      b='456'
-      @coma="coma"
-      @comb="comb"
-    />
-
   </div>
 </template>
 
 <script>
-import comA from './comA.vue'
 export default {
   //import引入的组件需要注入到对象中才能使用
-  components: { comA },
+  components: {  },
   data () {
     //这里存放数据
     return {

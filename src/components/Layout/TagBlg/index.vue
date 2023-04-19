@@ -93,8 +93,6 @@ export default {
   overflow: hidden;
   background: #fff;
   padding-right: 120px;
-  -webkit-box-shadow: 0 5px 10px #ddd;
-  box-shadow: 0 5px 10px #ddd;
   ul,
   li {
     list-style: none;

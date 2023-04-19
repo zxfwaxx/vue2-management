@@ -31,7 +31,7 @@
             <el-menu-item
               v-else
               :index="subItem.path"
-              :key="i2 + 'subItem'"
+              :key="i2 + 'subItems'"
             >
               <i :class="subItem.meta.icon"></i><span slot="title">{{ subItem.meta.title }}</span>
             </el-menu-item>
